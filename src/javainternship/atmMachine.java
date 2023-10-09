@@ -21,7 +21,7 @@ public void transferMoney(double amount) {
 public boolean withdrawMoney(double amount) {
 	
 	if(amount>currentBalance) {
-		System.out.println("You do not have sufficient balance in your account to withdraw "+ amount +" from you account.");
+		System.out.println("You do not have sufficient balance in your account to withdraw $"+ amount +" from you account.");
 		return false;
 	}
 	else if(amount == currentBalance) {
@@ -47,7 +47,7 @@ public class atmMachine {
 		if(choice == 1) {
 			System.out.println("Your available balance is :$"+accHolder.checkBalance());
 		}else if( choice ==2) {
-			System.out.println("Enter the amount you want to deposit in your bank account: $");
+			System.out.print("Enter the amount you want to deposit in your bank account: $");
 			accHolder.transferMoney(sc.nextDouble());
 			System.out.println("Amount deposit successful\nYour updated balance is: $"+ accHolder.checkBalance());
 		}
@@ -56,7 +56,7 @@ public class atmMachine {
 			
 			
 		else if(choice == 3) {
-			System.out.println("Enter the amount you want to withdraw from your bank account: $");
+			System.out.print("Enter the amount you want to withdraw from your bank account: $");
 			if(accHolder.withdrawMoney(sc.nextDouble())) {
 				System.out.println("Amount withdrawal successful\nYour updated balance is: $"+ accHolder.checkBalance());
 			}
